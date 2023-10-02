@@ -18,7 +18,8 @@
     justify-content: space-between;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.493);
-    color: aliceblue;
+    color: #FFFFFF;
+    flex-wrap: wrap;
 
 }
 
@@ -43,28 +44,28 @@
 
 .produtos{
     width: 100%;
-    background-color: aqua;
 }
 
 .texto-principal{
     text-align: center;
     font-size: 2.5rem;
+    color: #FFFF00;
+    margin: 20px 0;
 
 }
 
 
 
   
-  .carousel {
-    background-color: blueviolet;
+  .carousel,.carousel2 {
     display: flex;
     overflow: hidden;
     width: 100%;
+    padding: 20px;
   }
   
   .cellphone {
     width: 300px; /* Largura de cada celular */
-    background-color: blue;
     height: 410px;
     border-radius: 15px;
     margin-left: 20px;
@@ -73,6 +74,8 @@
     flex-direction: column;
     align-items: center;
     padding: 30px;
+    box-shadow: 8px 8px 10px black;
+    border: 1px solid #FFFF00;
     
   }
 
@@ -90,6 +93,7 @@
   .titulo-produto{
     text-align: center;
     margin: 10px;
+    color: white;
   }
 
 .open-modal-button{
@@ -98,13 +102,21 @@
     width: 150px;
     border-style: none;
     margin-top: 20px;
+    cursor: pointer;
+    color: white;
+    background-color: red;
     
 }
 
-.carousel:hover{
+.open-modal-button:hover{
+    color: black;
+    background-color: white;
+}
+
+.carousel,.carousel2:hover{
     cursor: grab;
 }
-.carousel:active{
+.carousel,.carousel2:active{
     cursor: grabbing;
 }
 /* Estilo para o modal de detalhes */
@@ -130,6 +142,7 @@
     width: 80%;
     
 }
+
 .textos-modal{
     display: flex;
     flex-direction: column;
@@ -171,3 +184,40 @@
     cursor: pointer;
 }
 
+
+footer{
+    text-align: center;
+    width: 100%;
+    background-color: rgb(24, 24, 24);
+    padding: 30px;
+    color: white;
+    box-shadow: 8px 8px 10px black;
+}
+
+
+@media(max-width:600px) {
+    .adicionar{
+        padding: 10px;
+    }
+
+
+    .modal-image{
+        width: 180px;
+        height: 240px;
+    }
+}
+
+@media(max-width:450px) {
+   
+    .modal-image{
+        width: 80px;
+        height: 240px;
+    }
+}
+
+@media(max-width:300px) {
+   
+    .modal-image{
+        display: none;
+    }
+}

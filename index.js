@@ -1,4 +1,5 @@
 const carousel = document.querySelector('.carousel');
+const carousel2 = document.querySelector('.carousel2')
 let isDragging = false;
 let startX, scrollLeft;
 
@@ -57,6 +58,29 @@ carousel.addEventListener('mousemove', (e) => {
   const x = e.pageX - carousel.offsetLeft;
   const walk = (x - startX) * 1.5;
   carousel.scrollLeft = scrollLeft - walk;
+});
+
+
+carousel2.addEventListener('mousedown', (e) => {
+  isDragging = true;
+  startX = e.pageX - carousel2.offsetLeft;
+  scrollLeft = carousel2.scrollLeft;
+});
+
+carousel2.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+
+carousel2.addEventListener('mouseleave', () => {
+  isDragging = false;
+});
+
+carousel2.addEventListener('mousemove', (e) => {
+  if (!isDragging) return;
+  e.preventDefault();
+  const x = e.pageX - carousel2.offsetLeft;
+  const walk = (x - startX) * 1.5;
+  carousel2.scrollLeft = scrollLeft - walk;
 });
 
 
